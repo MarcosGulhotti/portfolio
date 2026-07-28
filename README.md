@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Marcos Gulhotti — Portfolio
 
-## Getting Started
+Personal portfolio for [Marcos Vinicius Gulhotti](https://github.com/MarcosGulhotti), a senior software engineer focused on React, Next.js, and TypeScript. The site showcases experience and projects and makes it easy to get in touch — in Portuguese and English.
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- [Next.js 16](https://nextjs.org) (App Router)
+- [React 19](https://react.dev)
+- [TypeScript](https://www.typescriptlang.org) (strict)
+- [Tailwind CSS v4](https://tailwindcss.com) (CSS-first config)
+- [Motion](https://motion.dev) for lightweight animations
+
+## Features
+
+- **Bilingual** — `/pt` and `/en` routes, with a locale switcher and full content parity
+- **Light/dark theme** — dark by default, persisted in the browser
+- **Pages** — home, about, work (list + slug detail), and contact
+- **Typed content** — experience, projects, and site data in `src/content/site.ts`
+- **Locale proxy** — redirects `/` to `/pt` or `/en` based on `Accept-Language`
+
+## Structure
+
+```
+src/
+├── app/[lang]/          # Localized routes
+├── components/          # UI (header, timeline, projects, theme, etc.)
+├── content/site.ts      # Site data, experience, and projects
+├── i18n/
+│   ├── config.ts        # Locales and helpers
+│   └── dictionaries/    # UI copy (pt, en)
+└── proxy.ts             # Locale negotiation and redirects
+public/
+├── photos/              # Portrait and client emblems
+└── cv.pdf               # Résumé (when available)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Requirements: Node.js 20+ and npm.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
+Open [http://localhost:3000](http://localhost:3000) — the proxy redirects to `/pt` or `/en`.
 
-To learn more about Next.js, take a look at the following resources:
+### Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Command         | Description              |
+| --------------- | ------------------------ |
+| `npm run dev`   | Development server       |
+| `npm run build` | Production build         |
+| `npm run start` | Server after build       |
+| `npm run lint`  | ESLint                   |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Content
 
-## Deploy on Vercel
+The layout is in place; real facts (experience, projects, assets) live in `src/content/site.ts` and the dictionaries under `src/i18n/dictionaries/`. Placeholder entries are marked with `synthetic: true`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+See [CONTENT.md](./CONTENT.md) for what still needs to be replaced.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project docs
+
+- [PRODUCT.md](./PRODUCT.md) — purpose, audience, and product principles
+- [DESIGN.md](./DESIGN.md) — visual system (colors, typography, components)
+- [CONTENT.md](./CONTENT.md) — pending content checklist
+
+## License
+
+Private project (`"private": true` in `package.json`).
