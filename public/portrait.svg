@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" role="img" aria-label="Portrait placeholder">
+  <rect width="400" height="400" fill="#1a1c20"/>
+  <circle cx="200" cy="160" r="70" fill="#2a2d33"/>
+  <ellipse cx="200" cy="320" rx="110" ry="90" fill="#2a2d33"/>
+  <text x="200" y="380" text-anchor="middle" fill="#8b8f98" font-family="ui-monospace, monospace" font-size="14">REPLACE PHOTO</text>
+</svg>
