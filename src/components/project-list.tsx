@@ -1,20 +1,24 @@
 import Link from "next/link";
-import type { Dictionary, Locale } from "@/i18n/config";
-import { withLocale } from "@/i18n/config";
-import { projects, type Project } from "@/content/site";
+import { withLocale, type Dictionary, type Locale } from "@/i18n/config";
+import {
+  getFeaturedProjects,
+  projects,
+  type Project,
+} from "@/content/site";
+import { ExternalLinkIcon } from "@/components/external-link-icon";
 
 export function ProjectList({
   locale,
   dict,
-  limit,
+  featuredOnly = false,
   showViewAll = false,
 }: {
   locale: Locale;
   dict: Dictionary;
-  limit?: number;
+  featuredOnly?: boolean;
   showViewAll?: boolean;
 }) {
-  const items = typeof limit === "number" ? projects.slice(0, limit) : projects;
+  const items = featuredOnly ? getFeaturedProjects() : projects;
   const hasSynthetic = projects.some((item) => item.synthetic);
 
   return (
@@ -75,30 +79,35 @@ function ProjectRow({
   locale: Locale;
   dict: Dictionary;
 }) {
+  const caseHref = withLocale(`/work/${project.slug}`, locale);
+
   return (
     <li>
-      <Link
-        href={withLocale(`/work/${project.slug}`, locale)}
-        className="group grid gap-5 rounded-[10px] border border-hairline bg-surface/40 p-4 transition-colors hover:bg-surface sm:grid-cols-[minmax(0,240px)_1fr] sm:p-5"
-      >
+      <article className="group relative grid gap-5 rounded-[10px] border border-hairline bg-surface/40 p-4 transition-colors hover:bg-surface sm:grid-cols-[minmax(0,240px)_1fr] sm:p-5">
+        <Link
+          href={caseHref}
+          className="absolute inset-0 z-0 rounded-[10px]"
+          aria-label={project.name[locale]}
+        />
+
         <div
-          className={`relative aspect-video overflow-hidden rounded-[6px] border border-hairline ${
-            project.imageOnWhite ? "bg-white" : "bg-canvas"
+          className={`relative z-10 aspect-video overflow-hidden rounded-[6px] border border-hairline pointer-events-none ${
+            project.logoOnWhite ? "bg-white" : "bg-canvas"
           }`}
         >
-          {project.image ? (
+          {project.logo ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
-              src={project.image}
+              src={project.logo}
               alt=""
               className={`size-full ${
-                project.imageOnWhite
+                project.logoOnWhite
                   ? "object-contain p-6 sm:p-8"
                   : "object-cover"
               }`}
               style={
-                project.imageScale
-                  ? { transform: `scale(${project.imageScale})` }
+                project.logoScale
+                  ? { transform: `scale(${project.logoScale})` }
                   : undefined
               }
             />
@@ -109,14 +118,33 @@ function ProjectRow({
           )}
         </div>
 
-        <div className="flex min-w-0 flex-col justify-center">
+        <div className="relative z-10 flex min-w-0 flex-col justify-center pointer-events-none">
           <div className="flex items-start justify-between gap-4">
-            <h3 className="text-lg font-semibold tracking-tight text-ink sm:text-xl">
-              {project.name[locale]}
-            </h3>
+            <div className="flex min-w-0 flex-wrap items-center gap-2.5">
+              <h3 className="text-lg font-semibold tracking-tight text-ink sm:text-xl">
+                {project.url ? (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pointer-events-auto relative z-20 inline-flex items-center gap-1.5 transition-colors hover:text-accent"
+                  >
+                    {project.name[locale]}
+                    <ExternalLinkIcon />
+                  </a>
+                ) : (
+                  project.name[locale]
+                )}
+              </h3>
+              {project.freelance ? (
+                <span className="rounded-[4px] border border-hairline px-2 py-0.5 font-mono text-xs uppercase tracking-[0.08em] text-muted">
+                  {dict.work.freelanceBadge}
+                </span>
+              ) : null}
+            </div>
             <span
               aria-hidden
-              className="mt-1 text-muted transition-colors group-hover:text-accent"
+              className="mt-1 shrink-0 text-muted transition-colors group-hover:text-accent"
             >
               →
             </span>
@@ -140,7 +168,7 @@ function ProjectRow({
             ))}
           </ul>
         </div>
-      </Link>
+      </article>
     </li>
   );
 }

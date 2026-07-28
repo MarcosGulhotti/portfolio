@@ -20,7 +20,7 @@ export default async function HomePage({
       <Hero locale={locale} dict={dict} />
       <FloatingStack dict={dict} />
       <ExperienceTimeline locale={locale} dict={dict} />
-      <ProjectList locale={locale} dict={dict} limit={3} showViewAll />
+      <ProjectList locale={locale} dict={dict} featuredOnly showViewAll />
     </>
   );
 }

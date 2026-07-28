@@ -6,11 +6,11 @@
   --ink: #0a0a0c;
   --muted: #5c616a;
   --hairline: rgba(10, 10, 12, 0.12);
-  --accent: #b6f09c;
-  --accent-ink: #0a0a0c;
+  --accent: #4d6842;
+  --accent-ink: #f4f5f7;
   --dot: rgba(10, 10, 12, 0.14);
   --dot-glow: rgba(10, 10, 12, 0.06);
-  --focus: #b6f09c;
+  --focus: #4d6842;
 }
 
 html.dark {

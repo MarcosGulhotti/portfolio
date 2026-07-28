@@ -55,7 +55,7 @@ export default async function LangLayout({
   return (
     <html
       lang={locale === "pt" ? "pt-BR" : "en"}
-      className={`${geistSans.variable} ${geistMono.variable} dark h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body

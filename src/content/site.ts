@@ -1,31 +1,53 @@
+export type LocalizedText = { pt: string; en: string };
+
 export type Experience = {
   id: string;
-  company: { pt: string; en: string };
-  role: { pt: string; en: string };
-  period: { pt: string; en: string };
-  summary: { pt: string; en: string };
+  company: LocalizedText;
+  role: LocalizedText;
+  period: LocalizedText;
+  summary: LocalizedText;
   current?: boolean;
+  /** Project ids listed under this experience entry */
+  projectIds?: string[];
   /** Marks placeholder/demo entries shown with a disclosure note */
   synthetic?: boolean;
+};
+
+export type ProjectCaseStudy = {
+  /** Longer narrative for the project detail page */
+  overview: LocalizedText[];
+  /** Ownership / contribution on the project */
+  role: LocalizedText;
+  /** Concrete deliverables and product areas */
+  highlights: LocalizedText[];
+  /** Technical or process notes worth showing recruiters and clients */
+  notes: LocalizedText[];
 };
 
 export type Project = {
   id: string;
   slug: string;
-  name: { pt: string; en: string };
-  description: { pt: string; en: string };
-  client: { pt: string; en: string };
-  startDate: { pt: string; en: string };
-  endDate: { pt: string; en: string };
+  name: LocalizedText;
+  /** Short summary used in project lists */
+  description: LocalizedText;
+  client: LocalizedText;
+  startDate: LocalizedText;
+  endDate: LocalizedText;
   tags: string[];
-  /** Path under /public — leave empty until a real screenshot exists */
-  image?: string;
+  /** Detail-page content beyond the list summary */
+  caseStudy: ProjectCaseStudy;
+  /** Brand mark only — not a product screenshot; keep visually secondary */
+  logo?: string;
   /** White fill for transparent logos / emblems */
-  imageOnWhite?: boolean;
+  logoOnWhite?: boolean;
   /** Extra scale for logos that look too small in the frame */
-  imageScale?: number;
+  logoScale?: number;
   /** Marks placeholder/demo entries shown with a disclosure note */
   synthetic?: boolean;
+  /** Independent client work (not under a company role) */
+  freelance?: boolean;
+  /** Public live URL when the product is available to visit */
+  url?: string;
 };
 
 export type StackItem = {
@@ -139,6 +161,27 @@ export const stack: StackItem[] = [
 
 export const experience: Experience[] = [
   {
+    id: "freelancer",
+    company: {
+      pt: "Freelancer",
+      en: "Freelancer",
+    },
+    role: {
+      pt: "Engenheiro de Software",
+      en: "Software Engineer",
+    },
+    period: {
+      pt: "Jan 2025 — Atual",
+      en: "Jan 2025 — Present",
+    },
+    summary: {
+      pt: "Desenvolvimento de produtos digitais para clientes, cobrindo arquitetura, frontend, backend e entrega ponta a ponta com React, Next.js, TypeScript e Node.js.",
+      en: "Building digital products for clients end to end, covering architecture, frontend, backend, and delivery with React, Next.js, TypeScript, and Node.js.",
+    },
+    current: true,
+    projectIds: ["liore-management-platform", "kyle-co-real-estate"],
+  },
+  {
     id: "abercrombie-fitch",
     company: {
       pt: "Abercrombie & Fitch",
@@ -202,30 +245,228 @@ export const projects: Project[] = [
     id: "liore-management-platform",
     slug: "liore-management-platform",
     name: {
-      pt: "Plataforma de Gestão Médica",
-      en: "Medical Management Platform",
+      pt: "Plataforma de Gestão Clínica",
+      en: "Clinic Management Platform",
     },
     description: {
-      pt: "Sistema interno desenvolvido do zero para gestão de pacientes, médicos, agendamentos, pagamentos e processos administrativos. Fui responsável pela arquitetura, modelagem de dados, APIs, regras de negócio e implementação da interface.",
-      en: "An internal platform built from scratch for managing patients, doctors, appointments, payments, and administrative workflows. I owned the architecture, data modeling, APIs, business rules, and frontend implementation.",
+      pt: "Sistema interno para clínica de nutrição, unindo agenda, prontuário, planos alimentares e financeiro em um só fluxo.",
+      en: "Internal platform for a nutrition clinic, bringing scheduling, records, meal plans, and finance into one workflow.",
     },
     client: {
       pt: "Liore",
       en: "Liore",
     },
-    startDate: { pt: "Jan 2025", en: "Jan 2025" },
-    endDate: { pt: "Atual", en: "Present" },
-    image: "/photos/liore-emblem.avif",
-    imageOnWhite: true,
-    imageScale: 1.35,
+    startDate: { pt: "Nov 2025", en: "Nov 2025" },
+    endDate: { pt: "Jun 2026", en: "Jun 2026" },
+    logo: "/photos/liore-emblem.avif",
+    logoOnWhite: true,
+    logoScale: 2,
+    freelance: true,
     tags: [
       "Next.js",
       "TypeScript",
-      "Node.js",
-      "PostgreSQL",
+      "MongoDB",
       "React Hook Form",
       "Zod",
+      "FullCalendar",
+      "Jest",
     ],
+    caseStudy: {
+      overview: [
+        {
+          pt: "A Liore precisava de um sistema único para o ritmo do consultório: da chegada do paciente à documentação clínica e ao pagamento, sem trocar de ferramenta.",
+          en: "Liore needed one system for consultório pace: from patient arrival to clinical documentation and payment, without switching tools.",
+        },
+        {
+          pt: "Construí a plataforma do zero como único desenvolvedor, cobrindo produto, arquitetura, APIs, modelagem de dados e interface para os papéis Admin, SDR, Médico e Financeiro.",
+          en: "I built the platform from scratch as the sole developer, covering product, architecture, APIs, data modeling, and UI for Admin, SDR, Doctor, and Finance roles.",
+        },
+      ],
+      role: {
+        pt: "Único desenvolvedor, ownership ponta a ponta.",
+        en: "Sole developer with end-to-end ownership.",
+      },
+      highlights: [
+        {
+          pt: "Agenda com FullCalendar, fila de espera e fluxos de atendimento alinhados ao dia a dia da clínica.",
+          en: "Scheduling with FullCalendar, waiting queue, and visit flows aligned to clinic day-to-day work.",
+        },
+        {
+          pt: "Prontuário nutricional com anamnese, antropometria, planos alimentares e base de alimentos TACO.",
+          en: "Nutritional charting with anamnesis, anthropometry, meal plans, and a TACO food database.",
+        },
+        {
+          pt: "Módulo financeiro e dashboards operacionais para acompanhar a operação da clínica.",
+          en: "Finance module and operational dashboards to support clinic operations.",
+        },
+        {
+          pt: "Autenticação e autorização por papéis, com APIs Next.js e MongoDB.",
+          en: "Role-based authentication and authorization, with Next.js APIs and MongoDB.",
+        },
+      ],
+      notes: [
+        {
+          pt: "Stack principal: Next.js, TypeScript, MongoDB/Mongoose, React Hook Form, Zod, TipTap e testes com Jest.",
+          en: "Core stack: Next.js, TypeScript, MongoDB/Mongoose, React Hook Form, Zod, TipTap, and Jest tests.",
+        },
+        {
+          pt: "Atualizações em tempo real via Pusher em pontos sensíveis da operação.",
+          en: "Real-time updates via Pusher in operationally sensitive flows.",
+        },
+      ],
+    },
+  },
+  {
+    id: "kyle-co-real-estate",
+    slug: "kyle-co-real-estate",
+    name: {
+      pt: "Site Imobiliário",
+      en: "Real Estate Website",
+    },
+    description: {
+      pt: "Website de marketing imobiliário com design system próprio, formulário de contato, mapa, SEO e entrega ponta a ponta.",
+      en: "Real estate marketing site with a custom design system, contact form, map, SEO, and end-to-end delivery.",
+    },
+    client: {
+      pt: "Kyle & Co.",
+      en: "Kyle & Co.",
+    },
+    startDate: { pt: "Mai 2026", en: "May 2026" },
+    endDate: { pt: "Jul 2026", en: "Jul 2026" },
+    logo: "/photos/kyle-emblem.avif",
+    logoOnWhite: true,
+    logoScale: 2,
+    freelance: true,
+    url: "https://www.kylenrealestate.com/",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Zod",
+      "MapLibre",
+      "SEO",
+    ],
+    caseStudy: {
+      overview: [
+        {
+          pt: "A Kyle & Co. precisava de um site profissional para compradores, locatários e investidores, com clareza de marca e um caminho óbvio para contato.",
+          en: "Kyle & Co. needed a professional site for buyers, renters, and investors, with clear branding and an obvious path to get in touch.",
+        },
+        {
+          pt: "Entreguei o projeto sozinho, da arquitetura ao deploy, incluindo páginas institucionais, formulário validado com envio de e-mail, mapa interativo e base de SEO.",
+          en: "I delivered the project alone, from architecture to deploy, including institutional pages, a validated contact form with email delivery, an interactive map, and SEO foundations.",
+        },
+      ],
+      role: {
+        pt: "Único desenvolvedor, ownership ponta a ponta.",
+        en: "Sole developer with end-to-end ownership.",
+      },
+      highlights: [
+        {
+          pt: "Home, About, Contact, Privacy e Terms com hierarquia visual e componentes reutilizáveis.",
+          en: "Home, About, Contact, Privacy, and Terms with clear visual hierarchy and reusable components.",
+        },
+        {
+          pt: "Formulário de contato com validação Zod e envio de e-mail confiável.",
+          en: "Contact form with Zod validation and reliable email delivery.",
+        },
+        {
+          pt: "Mapa interativo com MapLibre e painéis de informação do escritório.",
+          en: "Interactive MapLibre map and office information panels.",
+        },
+        {
+          pt: "SEO, sitemap, Open Graph, acessibilidade e atenção a performance no App Router.",
+          en: "SEO, sitemap, Open Graph, accessibility, and performance attention on the App Router.",
+        },
+      ],
+      notes: [
+        {
+          pt: "Stack: Next.js 16, React 19, TypeScript, Tailwind CSS v4, shadcn/ui e deploy na Vercel.",
+          en: "Stack: Next.js 16, React 19, TypeScript, Tailwind CSS v4, shadcn/ui, and Vercel deployment.",
+        },
+        {
+          pt: "Design system próprio com tipografia expressiva, header com contraste dinâmico e seções reutilizáveis.",
+          en: "Custom design system with expressive typography, dynamic header contrast, and reusable section patterns.",
+        },
+      ],
+    },
+  },
+  {
+    id: "abercrombie-ecommerce",
+    slug: "abercrombie-ecommerce",
+    name: {
+      pt: "Plataforma de E-commerce",
+      en: "E-commerce Platform",
+    },
+    description: {
+      pt: "Desenvolvimento e manutenção da plataforma de e-commerce da Abercrombie & Fitch com React, TypeScript e GraphQL.",
+      en: "Development and maintenance of Abercrombie & Fitch's e-commerce platform with React, TypeScript, and GraphQL.",
+    },
+    client: {
+      pt: "Abercrombie & Fitch",
+      en: "Abercrombie & Fitch",
+    },
+    startDate: {
+      pt: "Nov 2022",
+      en: "Nov 2022",
+    },
+    endDate: {
+      pt: "Fev 2026",
+      en: "Feb 2026",
+    },
+    logo: "/photos/abercrombie-fitch-emblem.avif",
+    logoOnWhite: true,
+    url: "https://www.abercrombie.com/shop/wd",
+    tags: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "GraphQL",
+      "Node.js",
+      "Jest",
+      "E-commerce",
+    ],
+    caseStudy: {
+      overview: [
+        {
+          pt: "Participei do desenvolvimento e manutenção da plataforma de e-commerce da Abercrombie & Fitch, em um ambiente de produto de larga escala e equipes distribuídas.",
+          en: "I contributed to the development and maintenance of Abercrombie & Fitch's e-commerce platform in a large-scale product environment with distributed teams.",
+        },
+        {
+          pt: "O trabalho cobriu novas funcionalidades, correções, melhorias de interface e integração contínua com APIs GraphQL ao longo do ciclo de entrega.",
+          en: "The work covered new features, fixes, UI improvements, and ongoing GraphQL API integration throughout the delivery lifecycle.",
+        },
+      ],
+      role: {
+        pt: "Engenheiro de Software em time de produto e-commerce.",
+        en: "Software Engineer on the e-commerce product team.",
+      },
+      highlights: [
+        {
+          pt: "Implementação e evolução de fluxos de interface com React e TypeScript.",
+          en: "Building and evolving UI flows with React and TypeScript.",
+        },
+        {
+          pt: "Integração com APIs GraphQL e colaboração em mudanças de contrato e consumo de dados.",
+          en: "GraphQL API integration and collaboration on data contracts and client consumption.",
+        },
+        {
+          pt: "Testes automatizados, revisão de código e entrega contínua com times distribuídos.",
+          en: "Automated testing, code reviews, and continuous delivery with distributed teams.",
+        },
+      ],
+      notes: [
+        {
+          pt: "Stack principal: React, Next.js, TypeScript, GraphQL, Node.js e Jest.",
+          en: "Core stack: React, Next.js, TypeScript, GraphQL, Node.js, and Jest.",
+        },
+        {
+          pt: "Foco em qualidade de entrega, comunicação assíncrona e alinhamento com requisitos de produto.",
+          en: "Focus on delivery quality, async collaboration, and alignment with product requirements.",
+        },
+      ],
+    },
   },
   {
     id: "enterprise-management-systems",
@@ -235,8 +476,8 @@ export const projects: Project[] = [
       en: "Distributed Enterprise Systems",
     },
     description: {
-      pt: "Conjunto de aplicações internas desenvolvidas para apoiar operações corporativas. O trabalho envolveu arquitetura frontend, componentes reutilizáveis, integração com APIs e colaboração na padronização de mais de 30 microsserviços.",
-      en: "A group of internal applications developed to support enterprise operations. The work included frontend architecture, reusable components, API integration, and collaboration on the standardization of more than 30 microservices.",
+      pt: "Aplicações internas para operações corporativas, com arquitetura frontend e padronização entre microsserviços.",
+      en: "Internal applications for enterprise operations, with frontend architecture and cross-microservice standardization.",
     },
     client: {
       pt: "Abercrombie & Fitch",
@@ -244,16 +485,57 @@ export const projects: Project[] = [
     },
     startDate: { pt: "Nov 2022", en: "Nov 2022" },
     endDate: { pt: "Fev 2026", en: "Feb 2026" },
-    image: "/photos/abercrombie-fitch-emblem.avif",
-    imageOnWhite: true,
+    logo: "/photos/abercrombie-fitch-emblem.avif",
+    logoOnWhite: true,
     tags: [
       "React",
+      "Vite",
       "TypeScript",
       "Node.js",
       "GraphQL",
       "Microservices",
       "Jest",
     ],
+    caseStudy: {
+      overview: [
+        {
+          pt: "Além do e-commerce, atuei em um conjunto de aplicações internas que sustentam operações corporativas da Abercrombie & Fitch.",
+          en: "Beyond e-commerce, I worked on a group of internal applications that support Abercrombie & Fitch corporate operations.",
+        },
+        {
+          pt: "O foco foi arquitetura frontend, componentes reutilizáveis, integração com APIs e colaboração na padronização de uma malha com mais de 30 microsserviços.",
+          en: "The focus was frontend architecture, reusable components, API integration, and collaboration on standardizing a mesh of more than 30 microservices.",
+        },
+      ],
+      role: {
+        pt: "Engenheiro de Software em sistemas internos e plataforma.",
+        en: "Software Engineer on internal systems and platform work.",
+      },
+      highlights: [
+        {
+          pt: "Arquitetura frontend e componentes compartilhados para acelerar entrega entre aplicações.",
+          en: "Frontend architecture and shared components to speed delivery across applications.",
+        },
+        {
+          pt: "Integração com APIs e alinhamento de padrões entre times e serviços.",
+          en: "API integration and pattern alignment across teams and services.",
+        },
+        {
+          pt: "Colaboração na padronização de mais de 30 microsserviços em um ambiente distribuído.",
+          en: "Collaboration on standardizing more than 30 microservices in a distributed environment.",
+        },
+      ],
+      notes: [
+        {
+          pt: "Stack: React, Vite, TypeScript, Node.js, GraphQL e Jest.",
+          en: "Stack: React, Vite, TypeScript, Node.js, GraphQL, and Jest.",
+        },
+        {
+          pt: "Ênfase em consistência técnica, reuso e manutenibilidade em escala corporativa.",
+          en: "Emphasis on technical consistency, reuse, and maintainability at enterprise scale.",
+        },
+      ],
+    },
   },
   {
     id: "healthcare-saas-platform",
@@ -263,8 +545,8 @@ export const projects: Project[] = [
       en: "Healthcare SaaS Platform",
     },
     description: {
-      pt: "Plataforma médica utilizada por clientes nacionais e internacionais. Desenvolvi e mantive funcionalidades web e mobile, integrei interfaces com APIs e participei de decisões sobre melhorias do sistema e prioridades de desenvolvimento.",
-      en: "A healthcare platform used by clients in Brazil and abroad. I developed and maintained web and mobile features, integrated interfaces with APIs, and contributed to system improvements and development priorities.",
+      pt: "Plataforma médica web e mobile para clientes no Brasil e no exterior, com foco em produto e integração de APIs.",
+      en: "Web and mobile healthcare platform for clients in Brazil and abroad, focused on product and API integration.",
     },
     client: {
       pt: "ConectaDoc",
@@ -272,14 +554,67 @@ export const projects: Project[] = [
     },
     startDate: { pt: "Mai 2022", en: "May 2022" },
     endDate: { pt: "Nov 2022", en: "Nov 2022" },
-    image: "/photos/conectadoc-emblem.avif",
-    imageOnWhite: true,
-    tags: [
-      "React",
-      "React Native",
-      "TypeScript",
-      "JavaScript",
-      "REST APIs",
-    ],
+    logo: "/photos/conectadoc-emblem.avif",
+    logoOnWhite: true,
+    url: "https://conectadoc.com.br/",
+    tags: ["React", "React Native", "TypeScript", "JavaScript", "REST APIs"],
+    caseStudy: {
+      overview: [
+        {
+          pt: "Na ConectaDoc, atuei como principal desenvolvedor web de uma plataforma de saúde usada por clientes no Brasil e no exterior.",
+          en: "At ConectaDoc, I worked as the main web developer on a healthcare platform used by clients in Brazil and abroad.",
+        },
+        {
+          pt: "O trabalho misturou entrega de features, manutenção, integração com APIs e participação em decisões técnicas e de produto.",
+          en: "The work mixed feature delivery, maintenance, API integration, and participation in technical and product decisions.",
+        },
+      ],
+      role: {
+        pt: "Engenheiro de Software Júnior, principal desenvolvedor web.",
+        en: "Junior Software Engineer and main web developer.",
+      },
+      highlights: [
+        {
+          pt: "Desenvolvimento e manutenção de funcionalidades web com React e TypeScript.",
+          en: "Development and maintenance of web features with React and TypeScript.",
+        },
+        {
+          pt: "Contribuição em fluxos mobile com React Native.",
+          en: "Contribution to mobile flows with React Native.",
+        },
+        {
+          pt: "Integração de interfaces com APIs REST e apoio a prioridades de produto.",
+          en: "REST API interface integration and support for product priorities.",
+        },
+      ],
+      notes: [
+        {
+          pt: "Stack: React, React Native, TypeScript, JavaScript e REST APIs.",
+          en: "Stack: React, React Native, TypeScript, JavaScript, and REST APIs.",
+        },
+        {
+          pt: "Experiência próxima do cliente e do produto em um SaaS de saúde em operação.",
+          en: "Close-to-product experience in a live healthcare SaaS environment.",
+        },
+      ],
+    },
   },
 ];
+
+/** Projects highlighted on the home page — order preserved */
+export const featuredProjectIds = [
+  "liore-management-platform",
+  "abercrombie-ecommerce",
+  "enterprise-management-systems",
+] as const;
+
+export function getProjectsByIds(ids: readonly string[]): Project[] {
+  return ids.flatMap((id) => {
+    const project = projects.find((item) => item.id === id);
+    return project ? [project] : [];
+  });
+}
+
+export function getFeaturedProjects(): Project[] {
+  return getProjectsByIds(featuredProjectIds);
+}
