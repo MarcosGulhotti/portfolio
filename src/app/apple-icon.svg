@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" fill="none" role="img" aria-label="MG">
+  <rect width="180" height="180" rx="34" fill="#08090b"/>
+  <text
+    x="90"
+    y="118"
+    text-anchor="middle"
+    font-family="ui-sans-serif, system-ui, -apple-system, sans-serif"
+    font-size="76"
+    font-weight="600"
+    letter-spacing="-0.03em"
+    fill="#f4f5f7"
+  >MG</text>
+</svg>
