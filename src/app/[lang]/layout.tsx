@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
+import { Analytics } from "@vercel/analytics/next";
 import "../globals.css";
 import {
   getDictionary,
@@ -66,6 +67,7 @@ export default async function LangLayout({
         <SiteHeaderClient locale={locale} dict={dict} />
         <main className="flex-1">{children}</main>
         <SiteFooter dict={dict} />
+        <Analytics />
       </body>
     </html>
   );
