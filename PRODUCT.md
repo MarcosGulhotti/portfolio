@@ -60,7 +60,7 @@ Especialista frontend com React e Next.js, com foco em interface e produto — n
 
 - Nome: **Marcos Vinícius Gulhotti**.
 - Handle do GitHub: `MarcosGulhotti`.
-- E-mail conhecido do git: `marcosgulhotti@gmail.com` — ainda não confirmado como e-mail público de contato.
+- E-mail público de contato: `marcosgulhotti.dev@gmail.com`.
 - Nenhuma identidade visual, logo, paleta ou tipografia foi estabelecida ou declarada obrigatória.
 
 ## Evidence on Hand
