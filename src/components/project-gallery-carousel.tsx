@@ -196,8 +196,7 @@ export function ProjectGalleryCarousel({
                   src={active.src}
                   alt={active.alt[locale]}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 72rem"
-                  quality={90}
+                  unoptimized
                   className="object-cover object-top"
                   priority={index === 0}
                   draggable={false}
@@ -234,7 +233,7 @@ export function ProjectGalleryCarousel({
       <AnimatePresence>
         {expanded ? (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6"
+            className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4"
             role="dialog"
             aria-modal="true"
             aria-labelledby={dialogTitleId}
@@ -253,7 +252,7 @@ export function ProjectGalleryCarousel({
             />
 
             <motion.div
-              className="relative z-10 flex max-h-[min(94vh,960px)] w-full max-w-6xl flex-col rounded-[14px] border border-hairline bg-surface p-3 shadow-[0_24px_80px_-20px_rgba(0,0,0,0.55)] sm:p-4"
+              className="relative z-10 flex h-[min(96vh,1200px)] w-full max-w-[min(96vw,1680px)] flex-col rounded-[14px] border border-hairline bg-surface p-2 shadow-[0_24px_80px_-20px_rgba(0,0,0,0.55)] sm:p-3"
               initial={reduceMotion ? false : { opacity: 0, y: 16, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={
@@ -267,7 +266,7 @@ export function ProjectGalleryCarousel({
                   : { type: "spring", stiffness: 360, damping: 32 }
               }
             >
-              <div className="mb-3 flex items-center justify-between gap-3">
+              <div className="mb-2 flex shrink-0 items-center justify-between gap-3 px-1 sm:mb-3">
                 <p
                   id={dialogTitleId}
                   className="min-w-0 truncate text-sm font-medium text-ink"
@@ -299,18 +298,15 @@ export function ProjectGalleryCarousel({
               </div>
 
               <div className="relative min-h-0 flex-1 overflow-hidden rounded-[10px] border border-hairline bg-canvas">
-                <div className="relative aspect-[16/9] max-h-[calc(94vh-7rem)] w-full">
-                  <Image
-                    src={active.src}
-                    alt={active.alt[locale]}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 72rem"
-                    quality={95}
-                    className="object-contain object-top"
-                    priority
-                    draggable={false}
-                  />
-                </div>
+                <Image
+                  src={active.src}
+                  alt={active.alt[locale]}
+                  fill
+                  unoptimized
+                  className="object-contain"
+                  priority
+                  draggable={false}
+                />
               </div>
             </motion.div>
           </motion.div>
