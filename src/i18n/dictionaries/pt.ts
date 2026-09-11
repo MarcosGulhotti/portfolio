@@ -1,6 +1,6 @@
 export const dict = {
   meta: {
-    title: "Marcos Gulhotti — Engenheiro de Software Sênior",
+    title: "Marcos Gulhotti · Engenheiro de Software Sênior",
     description:
       "Portfólio de Marcos Vinícius Gulhotti, engenheiro de software sênior especializado em React, TypeScript, Next.js, Node.js e React Native.",
   },
@@ -51,6 +51,12 @@ export const dict = {
     highlights: "O que construí",
     notes: "Notas",
     stack: "Stack",
+    gallery: "Interface",
+    galleryPrev: "Slide anterior",
+    galleryNext: "Próximo slide",
+    galleryGoTo: "Ir para o slide",
+    galleryExpand: "Ampliar",
+    galleryClose: "Fechar visualização ampliada",
     pendingImage: "Imagem em preparação",
     freelanceBadge: "Freelance",
     visitSite: "Ver site",
@@ -98,7 +104,7 @@ export const dict = {
       },
       {
         label: "Liore",
-        body: "Também construí do zero uma plataforma de gestão médica para a Liore usando Next.js, TypeScript, Node.js e PostgreSQL. O sistema incluía gestão de pacientes, agendamento de médicos, criação de consultas, pagamentos, histórico financeiro e fluxos administrativos. Fui responsável pela implementação frontend, componentes reutilizáveis, interfaces responsivas, validação de formulários, integração com APIs, regras de negócio, modelagem de dados, estrutura da aplicação e decisões de arquitetura nas camadas frontend e backend.",
+        body: "Também construí do zero um sistema interno de gestão médica para a Liore com Next.js, TypeScript, Node.js e MongoDB. Desenvolvi módulos de pacientes, agenda médica, consultas, pagamentos e fluxos administrativos; componentes reutilizáveis; validação de formulários; integração com APIs; regras de negócio de disponibilidade; e decisões de arquitetura nas camadas frontend e backend, com interface responsiva para profissionais de saúde e administração.",
       },
     ],
     closing:

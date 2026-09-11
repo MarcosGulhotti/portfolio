@@ -50,7 +50,7 @@ export function FloatingStack({ dict }: { dict: Dictionary }) {
         className="mb-2 font-mono text-xs uppercase tracking-[0.12em] text-muted"
       >
         {dict.stack.title}
-        <span className="ml-2 text-ink/40">— {stack.length}</span>
+        <span className="ml-2 text-ink/40">· {stack.length}</span>
       </h2>
       <p className="sr-only">{dict.stack.description}</p>
 

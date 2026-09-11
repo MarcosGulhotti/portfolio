@@ -35,7 +35,7 @@ export function ProjectList({
           >
             {dict.work.title}
             <span className="ml-2 text-ink/50">
-              — {String(projects.length).padStart(2, "0")}
+              · {String(projects.length).padStart(2, "0")}
             </span>
           </h2>
           {hasSynthetic ? (
@@ -155,7 +155,7 @@ function ProjectRow({
           <p className="mt-3 font-mono text-xs uppercase tracking-[0.08em] text-muted">
             {dict.work.client}: {project.client[locale]}
             <span className="mx-2 opacity-40">·</span>
-            {project.startDate[locale]} — {project.endDate[locale]}
+            {project.startDate[locale]} · {project.endDate[locale]}
           </p>
           <ul className="mt-3 flex flex-wrap gap-2">
             {project.tags.map((tag) => (

@@ -24,6 +24,12 @@ export type ProjectCaseStudy = {
   notes: LocalizedText[];
 };
 
+export type ProjectGallerySlide = {
+  src: string;
+  alt: LocalizedText;
+  caption: LocalizedText;
+};
+
 export type Project = {
   id: string;
   slug: string;
@@ -36,6 +42,8 @@ export type Project = {
   tags: string[];
   /** Detail-page content beyond the list summary */
   caseStudy: ProjectCaseStudy;
+  /** Product screenshots for the case-study gallery */
+  gallery?: ProjectGallerySlide[];
   /** Brand mark only — not a product screenshot; keep visually secondary */
   logo?: string;
   /** White fill for transparent logos / emblems */
@@ -171,8 +179,8 @@ export const experience: Experience[] = [
       en: "Software Engineer",
     },
     period: {
-      pt: "Jan 2025 — Atual",
-      en: "Jan 2025 — Present",
+      pt: "Jan 2025 · Atual",
+      en: "Jan 2025 · Present",
     },
     summary: {
       pt: "Desenvolvimento de produtos digitais para clientes, cobrindo arquitetura, frontend, backend e entrega ponta a ponta com React, Next.js, TypeScript e Node.js.",
@@ -192,8 +200,8 @@ export const experience: Experience[] = [
       en: "Software Engineer",
     },
     period: {
-      pt: "Nov 2022 — Fev 2026",
-      en: "Nov 2022 — Feb 2026",
+      pt: "Nov 2022 · Fev 2026",
+      en: "Nov 2022 · Feb 2026",
     },
     summary: {
       pt: "Atuação em sistemas corporativos internos e plataformas de e-commerce usando React, TypeScript, Node.js e GraphQL. Trabalhei com sistemas distribuídos, integração de APIs, testes, documentação e desenvolvimento de funcionalidades desde a análise até a entrega.",
@@ -211,8 +219,8 @@ export const experience: Experience[] = [
       en: "Junior Software Engineer",
     },
     period: {
-      pt: "Mai 2022 — Nov 2022",
-      en: "May 2022 — Nov 2022",
+      pt: "Mai 2022 · Nov 2022",
+      en: "May 2022 · Nov 2022",
     },
     summary: {
       pt: "Atuei como principal desenvolvedor web de uma plataforma de saúde utilizada por clientes no Brasil e no exterior. Desenvolvi funcionalidades com React, React Native e TypeScript, integrei APIs e participei de decisões técnicas e de produto.",
@@ -230,8 +238,8 @@ export const experience: Experience[] = [
       en: "Peer Coach",
     },
     period: {
-      pt: "Mar 2021 — Mai 2022",
-      en: "Mar 2021 — May 2022",
+      pt: "Mar 2021 · Mai 2022",
+      en: "Mar 2021 · May 2022",
     },
     summary: {
       pt: "Liderei mentorias técnicas para estudantes de desenvolvimento full stack em JavaScript, React e Node.js. Realizei revisões de código, apoiei a resolução de problemas e ajudei desenvolvedores a melhorar lógica, qualidade de código e boas práticas.",
@@ -249,8 +257,8 @@ export const projects: Project[] = [
       en: "Clinic Management Platform",
     },
     description: {
-      pt: "Sistema interno para clínica de nutrição, unindo agenda, prontuário, planos alimentares e financeiro em um só fluxo.",
-      en: "Internal platform for a nutrition clinic, bringing scheduling, records, meal plans, and finance into one workflow.",
+      pt: "Sistema interno de gestão médica construído do zero, com agenda, pacientes, pagamentos e fluxos administrativos em uma arquitetura full-stack moderna.",
+      en: "Internal medical management system built from scratch, with scheduling, patients, payments, and admin workflows on a modern full-stack architecture.",
     },
     client: {
       pt: "Liore",
@@ -265,53 +273,121 @@ export const projects: Project[] = [
     tags: [
       "Next.js",
       "TypeScript",
+      "Node.js",
       "MongoDB",
       "React Hook Form",
       "Zod",
       "FullCalendar",
-      "Jest",
+    ],
+    gallery: [
+      {
+        src: "/photos/liore/dashboard.png",
+        alt: {
+          pt: "Dashboard inicial da Liore com métricas do dia e lista de agendamentos",
+          en: "Liore home dashboard with daily metrics and today's appointments list",
+        },
+        caption: {
+          pt: "Início, visão operacional do dia",
+          en: "Home, daily operations overview",
+        },
+      },
+      {
+        src: "/photos/liore/schedule.png",
+        alt: {
+          pt: "Agenda semanal da Liore com blocos de consulta coloridos por horário",
+          en: "Liore weekly calendar with color-coded appointment blocks",
+        },
+        caption: {
+          pt: "Agenda, calendário semanal",
+          en: "Schedule, weekly calendar",
+        },
+      },
+      {
+        src: "/photos/liore/patients.png",
+        alt: {
+          pt: "Lista de pacientes da Liore com filtros, status e paginação",
+          en: "Liore patients list with filters, status badges, and pagination",
+        },
+        caption: {
+          pt: "Pacientes, busca e gestão",
+          en: "Patients, search and management",
+        },
+      },
+      {
+        src: "/photos/liore/profile.png",
+        alt: {
+          pt: "Perfil profissional na Liore com dados cadastrais e tags de recomendação",
+          en: "Liore professional profile with registry fields and recommendation tags",
+        },
+        caption: {
+          pt: "Perfil, cadastro e tags",
+          en: "Profile, registry and tags",
+        },
+      },
+      {
+        src: "/photos/liore/meal-plan.png",
+        alt: {
+          pt: "Plano alimentar na Liore com refeições, macros e gráfico de distribuição",
+          en: "Liore meal plan view with meals, macros, and distribution chart",
+        },
+        caption: {
+          pt: "Plano alimentar, macros e refeições",
+          en: "Meal plan, macros and meals",
+        },
+      },
+      {
+        src: "/photos/liore/finance.png",
+        alt: {
+          pt: "Tela de recebimentos da Liore com tabela de pagamentos pendentes",
+          en: "Liore receipts screen with pending payments table",
+        },
+        caption: {
+          pt: "Recebimentos, financeiro da clínica",
+          en: "Receipts, clinic finance",
+        },
+      },
     ],
     caseStudy: {
       overview: [
         {
-          pt: "A Liore precisava de um sistema único para o ritmo do consultório: da chegada do paciente à documentação clínica e ao pagamento, sem trocar de ferramenta.",
-          en: "Liore needed one system for consultório pace: from patient arrival to clinical documentation and payment, without switching tools.",
+          pt: "Construí do zero um sistema interno de gestão para a plataforma médica da Liore, com Next.js, TypeScript e Node.js, estabelecendo uma arquitetura full-stack moderna.",
+          en: "Built an internal management system for Liore's medical platform from scratch using Next.js, TypeScript, and Node.js, establishing a modern full-stack architecture.",
         },
         {
-          pt: "Construí a plataforma do zero como único desenvolvedor, cobrindo produto, arquitetura, APIs, modelagem de dados e interface para os papéis Admin, SDR, Médico e Financeiro.",
-          en: "I built the platform from scratch as the sole developer, covering product, architecture, APIs, data modeling, and UI for Admin, SDR, Doctor, and Finance roles.",
+          pt: "Como único desenvolvedor, tomei as decisões de arquitetura: modelagem com MongoDB, design de APIs em Node.js e implementação do frontend em Next.js e TypeScript, com foco em escalabilidade e manutenção.",
+          en: "As the sole developer, I owned architecture decisions: data modeling with MongoDB, API design with Node.js, and frontend implementation with Next.js and TypeScript, with a focus on scalability and maintainability.",
         },
       ],
       role: {
-        pt: "Único desenvolvedor, ownership ponta a ponta.",
-        en: "Sole developer with end-to-end ownership.",
+        pt: "Único desenvolvedor, ownership ponta a ponta da arquitetura e da entrega.",
+        en: "Sole developer with end-to-end ownership of architecture and delivery.",
       },
       highlights: [
         {
-          pt: "Agenda com FullCalendar, fila de espera e fluxos de atendimento alinhados ao dia a dia da clínica.",
-          en: "Scheduling with FullCalendar, waiting queue, and visit flows aligned to clinic day-to-day work.",
+          pt: "Módulos completos de gestão de pacientes, agenda médica, criação de consultas, acompanhamento de pagamentos e fluxos administrativos.",
+          en: "Comprehensive modules for patient management, doctor scheduling, appointment creation, payment tracking, and administrative workflows.",
         },
         {
-          pt: "Prontuário nutricional com anamnese, antropometria, planos alimentares e base de alimentos TACO.",
-          en: "Nutritional charting with anamnesis, anthropometry, meal plans, and a TACO food database.",
+          pt: "Componentes frontend reutilizáveis e fluxos de aplicação estruturados para manter o sistema escalável e sustentável.",
+          en: "Reusable frontend components and structured application flows to keep the system scalable and maintainable.",
         },
         {
-          pt: "Módulo financeiro e dashboards operacionais para acompanhar a operação da clínica.",
-          en: "Finance module and operational dashboards to support clinic operations.",
+          pt: "Validação robusta de formulários, tratamento de dados, integração com APIs e regras de negócio para disponibilidade e gestão de agendamentos.",
+          en: "Robust form validation, data handling, API integration, and business rules for scheduling availability and appointment management.",
         },
         {
-          pt: "Autenticação e autorização por papéis, com APIs Next.js e MongoDB.",
-          en: "Role-based authentication and authorization, with Next.js APIs and MongoDB.",
+          pt: "Interface limpa e responsiva, pensada para usabilidade de profissionais de saúde e usuários administrativos.",
+          en: "Clean, responsive interface focused on usability for healthcare professionals and administrative users.",
         },
       ],
       notes: [
         {
-          pt: "Stack principal: Next.js, TypeScript, MongoDB/Mongoose, React Hook Form, Zod, TipTap e testes com Jest.",
-          en: "Core stack: Next.js, TypeScript, MongoDB/Mongoose, React Hook Form, Zod, TipTap, and Jest tests.",
+          pt: "Stack principal: Next.js, TypeScript, Node.js, MongoDB, React Hook Form, Zod e FullCalendar.",
+          en: "Core stack: Next.js, TypeScript, Node.js, MongoDB, React Hook Form, Zod, and FullCalendar.",
         },
         {
-          pt: "Atualizações em tempo real via Pusher em pontos sensíveis da operação.",
-          en: "Real-time updates via Pusher in operationally sensitive flows.",
+          pt: "O escopo cobre operação clínica do dia a dia: pacientes, agenda, consultas, financeiro e administração em um só produto.",
+          en: "Scope covers day-to-day clinic operations: patients, scheduling, appointments, finance, and administration in one product.",
         },
       ],
     },

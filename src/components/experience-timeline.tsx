@@ -23,7 +23,7 @@ export function ExperienceTimeline({
           className="font-mono text-xs uppercase tracking-[0.12em] text-muted"
         >
           {dict.experience.title}
-          <span className="ml-2 text-ink/50">— {experience.length}</span>
+          <span className="ml-2 text-ink/50">· {experience.length}</span>
         </h2>
         {hasSynthetic ? (
           <p className="text-sm text-muted">{dict.experience.syntheticNote}</p>

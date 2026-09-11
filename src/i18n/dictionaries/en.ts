@@ -1,6 +1,6 @@
 export const dict = {
   meta: {
-    title: "Marcos Gulhotti — Senior Software Engineer",
+    title: "Marcos Gulhotti · Senior Software Engineer",
     description:
       "Portfolio of Marcos Vinícius Gulhotti, a senior software engineer specializing in React, TypeScript, Next.js, Node.js, and React Native.",
   },
@@ -51,6 +51,12 @@ export const dict = {
     highlights: "What I built",
     notes: "Notes",
     stack: "Stack",
+    gallery: "Interface",
+    galleryPrev: "Previous slide",
+    galleryNext: "Next slide",
+    galleryGoTo: "Go to slide",
+    galleryExpand: "Expand",
+    galleryClose: "Close expanded view",
     pendingImage: "Image coming soon",
     freelanceBadge: "Freelance",
     visitSite: "Visit site",
@@ -98,7 +104,7 @@ export const dict = {
       },
       {
         label: "Liore",
-        body: "I also built a medical management platform from scratch for Liore using Next.js, TypeScript, Node.js, and PostgreSQL. The system included patient management, doctor scheduling, appointment creation, payments, financial history, and administrative workflows. I was responsible for frontend implementation, reusable components, responsive interfaces, form validation, API integration, business rules, data modeling, application structure, and architecture decisions across the frontend and backend layers.",
+        body: "I also built an internal medical management system from scratch for Liore using Next.js, TypeScript, Node.js, and MongoDB. I developed modules for patient management, doctor scheduling, appointments, payments, and administrative workflows; reusable components; form validation; API integration; scheduling business rules; and architecture decisions across the frontend and backend, with a clean responsive interface for healthcare and administrative users.",
       },
     ],
     closing:

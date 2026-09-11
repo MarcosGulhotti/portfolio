@@ -9,6 +9,7 @@ import {
 } from "@/i18n/config";
 import { projects } from "@/content/site";
 import { ExternalLinkIcon } from "@/components/external-link-icon";
+import { ProjectGalleryCarousel } from "@/components/project-gallery-carousel";
 
 export function generateStaticParams() {
   return projects.flatMap((project) => [
@@ -38,103 +39,136 @@ export default async function ProjectPage({
   if (!project) notFound();
 
   const { caseStudy } = project;
+  const gallery = project.gallery;
+  const hasGallery = Boolean(gallery?.length);
 
   return (
-    <article className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-20">
-      <Link
-        href={withLocale("/work", locale)}
-        className="font-mono text-xs uppercase tracking-[0.08em] text-muted transition-colors hover:text-accent"
-      >
-        ← {dict.nav.work}
-      </Link>
+    <article
+      className={`mx-auto px-5 py-16 sm:px-8 sm:py-20 ${
+        hasGallery ? "max-w-5xl" : "max-w-3xl"
+      }`}
+    >
+      <div className={hasGallery ? "mx-auto max-w-3xl" : undefined}>
+        <Link
+          href={withLocale("/work", locale)}
+          className="font-mono text-xs uppercase tracking-[0.08em] text-muted transition-colors hover:text-accent"
+        >
+          ← {dict.nav.work}
+        </Link>
 
-      <header className="mt-8 border-b border-hairline pb-8">
-        <p className="font-mono text-xs uppercase tracking-[0.08em] text-muted">
-          {dict.work.client}: {project.client[locale]}
-          <span className="mx-2 opacity-40">·</span>
-          {project.startDate[locale]} — {project.endDate[locale]}
-        </p>
-        <h1 className="mt-3 text-balance text-4xl font-semibold tracking-[-0.03em] text-ink sm:text-5xl">
-          {project.name[locale]}
-        </h1>
-        <p className="mt-3 max-w-prose text-base leading-relaxed text-muted">
-          {caseStudy.role[locale]}
-        </p>
-        {project.url ? (
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group mt-5 inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.08em] text-muted transition-colors hover:text-accent"
-          >
-            {dict.work.visitSite}
-            <span className="opacity-40">·</span>
-            <span className="normal-case tracking-normal text-ink transition-colors group-hover:text-accent">
-              {siteHostname(project.url)}
-            </span>
-            <ExternalLinkIcon className="shrink-0 text-muted transition-colors group-hover:text-accent" />
-          </a>
-        ) : null}
-      </header>
-
-      <CaseSection id="overview-heading" title={dict.work.overview} className="mt-10 space-y-4">
-        {caseStudy.overview.map((paragraph) => (
-          <p
-            key={paragraph[locale]}
-            className="max-w-prose text-base leading-relaxed text-muted sm:text-lg"
-          >
-            {paragraph[locale]}
+        <header className="mt-8 border-b border-hairline pb-8">
+          <p className="font-mono text-xs uppercase tracking-[0.08em] text-muted">
+            {dict.work.client}: {project.client[locale]}
+            <span className="mx-2 opacity-40">·</span>
+            {project.startDate[locale]} · {project.endDate[locale]}
           </p>
-        ))}
-      </CaseSection>
-
-      <CaseSection id="highlights-heading" title={dict.work.highlights} className="mt-12">
-        <ul className="mt-4 space-y-3">
-          {caseStudy.highlights.map((item) => (
-            <li
-              key={item[locale]}
-              className="flex gap-3 text-base leading-relaxed text-muted"
+          <h1 className="mt-3 text-balance text-4xl font-semibold tracking-[-0.03em] text-ink sm:text-5xl">
+            {project.name[locale]}
+          </h1>
+          <p className="mt-3 max-w-prose text-base leading-relaxed text-muted">
+            {caseStudy.role[locale]}
+          </p>
+          {project.url ? (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-5 inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.08em] text-muted transition-colors hover:text-accent"
             >
-              <span className="mt-2 size-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
-              <span>{item[locale]}</span>
-            </li>
-          ))}
-        </ul>
-      </CaseSection>
+              {dict.work.visitSite}
+              <span className="opacity-40">·</span>
+              <span className="normal-case tracking-normal text-ink transition-colors group-hover:text-accent">
+                {siteHostname(project.url)}
+              </span>
+              <ExternalLinkIcon className="shrink-0 text-muted transition-colors group-hover:text-accent" />
+            </a>
+          ) : null}
+        </header>
 
-      <CaseSection id="notes-heading" title={dict.work.notes} className="mt-12">
-        <ul className="mt-4 space-y-3">
-          {caseStudy.notes.map((item) => (
-            <li
-              key={item[locale]}
-              className="max-w-prose text-sm leading-relaxed text-muted"
+        <CaseSection
+          id="overview-heading"
+          title={dict.work.overview}
+          className="mt-10 space-y-4"
+        >
+          {caseStudy.overview.map((paragraph) => (
+            <p
+              key={paragraph[locale]}
+              className="max-w-prose text-base leading-relaxed text-muted sm:text-lg"
             >
-              {item[locale]}
-            </li>
+              {paragraph[locale]}
+            </p>
           ))}
-        </ul>
-      </CaseSection>
+        </CaseSection>
+      </div>
 
-      <CaseSection
-        id="stack-heading"
-        title={dict.work.stack}
-        className="mt-12 border-t border-hairline pt-8"
-      >
-        <ul className="mt-4 flex flex-wrap gap-2">
-          {project.tags.map((tag) => (
-            <li
-              key={tag}
-              className="rounded-[4px] border border-hairline px-2 py-1 font-mono text-xs uppercase tracking-[0.06em] text-muted"
-            >
-              {tag}
-            </li>
-          ))}
-        </ul>
-      </CaseSection>
-
-      {project.synthetic ? (
-        <p className="mt-10 text-sm text-muted">{dict.work.syntheticNote}</p>
+      {hasGallery && gallery ? (
+        <ProjectGalleryCarousel
+          slides={gallery}
+          locale={locale}
+          dict={dict}
+        />
       ) : null}
+
+      <div className={hasGallery ? "mx-auto max-w-3xl" : undefined}>
+        <CaseSection
+          id="highlights-heading"
+          title={dict.work.highlights}
+          className="mt-12"
+        >
+          <ul className="mt-4 space-y-3">
+            {caseStudy.highlights.map((item) => (
+              <li
+                key={item[locale]}
+                className="flex gap-3 text-base leading-relaxed text-muted"
+              >
+                <span
+                  className="mt-2 size-1.5 shrink-0 rounded-full bg-accent"
+                  aria-hidden
+                />
+                <span>{item[locale]}</span>
+              </li>
+            ))}
+          </ul>
+        </CaseSection>
+
+        <CaseSection
+          id="notes-heading"
+          title={dict.work.notes}
+          className="mt-12"
+        >
+          <ul className="mt-4 space-y-3">
+            {caseStudy.notes.map((item) => (
+              <li
+                key={item[locale]}
+                className="max-w-prose text-sm leading-relaxed text-muted"
+              >
+                {item[locale]}
+              </li>
+            ))}
+          </ul>
+        </CaseSection>
+
+        <CaseSection
+          id="stack-heading"
+          title={dict.work.stack}
+          className="mt-12 border-t border-hairline pt-8"
+        >
+          <ul className="mt-4 flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <li
+                key={tag}
+                className="rounded-[4px] border border-hairline px-2 py-1 font-mono text-xs uppercase tracking-[0.06em] text-muted"
+              >
+                {tag}
+              </li>
+            ))}
+          </ul>
+        </CaseSection>
+
+        {project.synthetic ? (
+          <p className="mt-10 text-sm text-muted">{dict.work.syntheticNote}</p>
+        ) : null}
+      </div>
     </article>
   );
 }
