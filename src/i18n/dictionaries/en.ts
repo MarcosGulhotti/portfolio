@@ -2,7 +2,7 @@ export const dict = {
   meta: {
     title: "Marcos Gulhotti · Senior Software Engineer",
     description:
-      "Portfolio of Marcos Vinícius Gulhotti, a senior software engineer specializing in React, TypeScript, Next.js, Node.js, and React Native.",
+      "Portfolio of Marcos Vinícius Gulhotti, Senior Software Engineer specializing in React, TypeScript, Next.js, and micro-frontend architectures for scalable web products.",
   },
   nav: {
     work: "Projects",
@@ -66,54 +66,54 @@ export const dict = {
   },
   about: {
     title: "About",
-    lead: "I'm a Senior Frontend Engineer with over five years of experience building and maintaining web and mobile applications across global e-commerce, enterprise systems, healthcare platforms, education technology, and internal business tools. My primary expertise is in React, TypeScript, Next.js, JavaScript, and React Native, supported by practical experience with Node.js, GraphQL, REST APIs, SQL, MongoDB, automated testing, CI/CD, and distributed system environments.",
+    lead: "Senior Software Engineer with 5+ years building scalable web solutions and leading micro-frontend architectures for global e-commerce platforms. I specialize in React, TypeScript, and Next.js to deliver high-performance applications that drive business growth. Recent work includes a 30% performance improvement through micro-frontend optimization at Abercrombie & Fitch, 30+ micro-frontends in large-scale retail systems, and end-to-end digital products as a freelancer, from clinic management platforms to real estate websites. I work across the full stack with React, Next.js, TypeScript, Node.js, and MongoDB, spanning Fortune 500 companies and healthcare technology startups.",
     domainsLabel: "Domains",
     domains: [
       "E-commerce",
-      "Enterprise",
+      "Micro-frontends",
       "Healthcare",
+      "Enterprise",
       "EdTech",
-      "Internal tools",
     ],
     stackLabel: "Core stack",
     stack: [
       "React",
       "TypeScript",
       "Next.js",
-      "JavaScript",
-      "React Native",
       "Node.js",
-      "GraphQL",
-      "REST",
-      "SQL",
       "MongoDB",
+      "GraphQL",
+      "React Native",
+      "Jest",
+      "Docker",
+      "Vercel",
     ],
     pathLabel: "Path",
     chapters: [
       {
+        label: "Liore",
+        body: "As a freelancer, I architected and delivered complete digital products from conception to deployment: frontend, backend, integrations, and infrastructure. As sole developer, I built a complex clinic management platform with scheduling, clinical records, nutrition tracking, finance modules, and role-based workflows, alongside a high-performance real estate website with SEO optimization. Stack: React, Next.js, TypeScript, Node.js, MongoDB, Tailwind CSS, and Vercel.",
+      },
+      {
         label: "Abercrombie & Fitch",
-        body: "At Abercrombie & Fitch, I worked on global e-commerce applications and enterprise-level internal management systems using React, TypeScript, Node.js, and GraphQL. My responsibilities included developing new product features, maintaining existing applications, integrating frontend interfaces with APIs, resolving production and development issues, and improving usability and code quality. I contributed to applications built around distributed architecture, participated in the creation and standardization of more than 30 microservices, and maintained technical documentation for APIs and user interfaces. I also worked with Jest, code reviews, reusable component patterns, frontend architecture improvements, and feature ownership from requirements analysis through testing and delivery.",
+        body: "As Senior Software Engineer, I co-designed and developed a micro-frontend orchestration platform for a large-scale e-commerce site, contributing to a 30% performance improvement across global platforms with Next.js and TypeScript. Earlier as Software Engineer, I helped build a management software suite with 30+ microservices in a distributed architecture, modernized legacy projects, standardized development practices, and maintained API and UI documentation. Stack included React, TypeScript, Next.js, Vite, GraphQL, Jest, Storybook, Docker, and Podman.",
       },
       {
         label: "ConectaDoc",
-        body: "Before that, I worked at ConectaDoc as the main web developer for a healthcare platform used by clients in Brazil and other countries. I developed and maintained web and mobile features with React, React Native, TypeScript, and JavaScript, while integrating frontend applications with backend services and business workflows. The role also involved debugging, refactoring, technical decision-making, communication with stakeholders, and translating product requirements into practical technical solutions.",
+        body: "At ConectaDoc, I managed technical development of a healthcare application used by an international client base, shipping feature enhancements that improved user experience. I contributed to technical decision-making and system design, strengthened data security and integrity with solid engineering practices and compliance standards, and worked across React, React Native, TypeScript, JavaScript, and Jest.",
       },
       {
         label: "Kenzie Academy Brazil",
-        body: "At Kenzie Academy Brazil, I worked as a Peer Coach, mentoring full-stack development students in JavaScript, React, Node.js, and software engineering practices. I reviewed projects, helped developers debug technical problems, and provided feedback on logic, readability, maintainability, and code quality. This experience strengthened my ability to communicate technical concepts, review code, and support the development of other engineers.",
-      },
-      {
-        label: "Liore",
-        body: "I also built an internal medical management system from scratch for Liore using Next.js, TypeScript, Node.js, and MongoDB. I developed modules for patient management, doctor scheduling, appointments, payments, and administrative workflows; reusable components; form validation; API integration; scheduling business rules; and architecture decisions across the frontend and backend, with a clean responsive interface for healthcare and administrative users.",
+        body: "As Peer Coach at Kenzie Academy Brazil, I provided technical mentorship and debugging support to fellow developers, improving learning outcomes and problem-solving skills. I evaluated and reviewed tasks in JavaScript, TypeScript, HTML, CSS, and React, and monitored student progress throughout the program.",
       },
     ],
     closing:
-      "Across these experiences, I have developed a strong foundation in frontend architecture, component-based development, API integration, testing, performance, system design discussions, and end-to-end feature ownership. I'm most effective in roles where I can combine hands-on frontend development with technical decision-making, collaboration, and responsibility for delivering scalable and maintainable product experiences.",
+      "Currently seeking Senior Software Engineer opportunities where I can apply my expertise in modern web technologies and system architecture to build impactful products.",
   },
   contact: {
     title: "Contact",
     intro:
-      "I'm available for remote opportunities, software projects, and conversations about building digital products.",
+      "I'm seeking Senior Software Engineer opportunities: remote roles, product work, and conversations about building digital systems that scale.",
     email: "Email",
     linkedin: "LinkedIn",
     whatsapp: "WhatsApp",

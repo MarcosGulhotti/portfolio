@@ -2,7 +2,7 @@ export const dict = {
   meta: {
     title: "Marcos Gulhotti · Engenheiro de Software Sênior",
     description:
-      "Portfólio de Marcos Vinícius Gulhotti, engenheiro de software sênior especializado em React, TypeScript, Next.js, Node.js e React Native.",
+      "Portfólio de Marcos Vinícius Gulhotti, Engenheiro de Software Sênior especializado em React, TypeScript, Next.js e arquiteturas de micro-frontends para produtos web escaláveis.",
   },
   nav: {
     work: "Projetos",
@@ -66,54 +66,54 @@ export const dict = {
   },
   about: {
     title: "Sobre",
-    lead: "Sou Senior Frontend Engineer com mais de cinco anos de experiência construindo e mantendo aplicações web e mobile em e-commerce global, sistemas empresariais, plataformas de saúde, tecnologia educacional e ferramentas internas de negócio. Minha expertise principal está em React, TypeScript, Next.js, JavaScript e React Native, com experiência prática em Node.js, GraphQL, REST APIs, SQL, MongoDB, testes automatizados, CI/CD e ambientes de sistemas distribuídos.",
+    lead: "Engenheiro de Software Sênior com mais de 5 anos construindo soluções web escaláveis e liderando arquiteturas de micro-frontends para plataformas de e-commerce globais. Especializado em React, TypeScript e Next.js para entregar aplicações de alta performance que impulsionam o crescimento do negócio. Resultados recentes incluem 30% de melhoria de performance via otimização de micro-frontends na Abercrombie & Fitch, 30+ micro-frontends em sistemas de varejo em larga escala, e produtos digitais ponta a ponta como freelancer, de plataformas de gestão clínica a sites imobiliários. Atuo full stack com React, Next.js, TypeScript, Node.js e MongoDB, de empresas Fortune 500 a startups de saúde.",
     domainsLabel: "Domínios",
     domains: [
       "E-commerce",
-      "Enterprise",
+      "Micro-frontends",
       "Saúde",
+      "Enterprise",
       "EdTech",
-      "Ferramentas internas",
     ],
     stackLabel: "Stack principal",
     stack: [
       "React",
       "TypeScript",
       "Next.js",
-      "JavaScript",
-      "React Native",
       "Node.js",
-      "GraphQL",
-      "REST",
-      "SQL",
       "MongoDB",
+      "GraphQL",
+      "React Native",
+      "Jest",
+      "Docker",
+      "Vercel",
     ],
     pathLabel: "Trajetória",
     chapters: [
       {
+        label: "Liore",
+        body: "Como freelancer, arquitetei e entreguei produtos digitais completos da concepção ao deploy: frontend, backend, integrações e infraestrutura. Como único desenvolvedor, construí uma plataforma complexa de gestão clínica com agenda, prontuários, acompanhamento nutricional, módulos financeiros e fluxos com papéis de acesso, além de um site imobiliário de alta performance com otimização de SEO. Stack: React, Next.js, TypeScript, Node.js, MongoDB, Tailwind CSS e Vercel.",
+      },
+      {
         label: "Abercrombie & Fitch",
-        body: "Na Abercrombie & Fitch, trabalhei em aplicações de e-commerce global e sistemas internos de gestão em nível empresarial usando React, TypeScript, Node.js e GraphQL. Minhas responsabilidades incluíram desenvolver novas funcionalidades de produto, manter aplicações existentes, integrar interfaces frontend com APIs, resolver problemas de produção e desenvolvimento, e melhorar usabilidade e qualidade de código. Contribuí para aplicações construídas em arquitetura distribuída, participei da criação e padronização de mais de 30 microsserviços e mantive documentação técnica de APIs e interfaces de usuário. Também trabalhei com Jest, code reviews, padrões de componentes reutilizáveis, melhorias de arquitetura frontend e ownership de features desde a análise de requisitos até testes e entrega.",
+        body: "Como Engenheiro de Software Sênior, co-projetei e desenvolvi uma plataforma de orquestração de micro-frontends para um e-commerce de larga escala, contribuindo para 30% de melhoria de performance em plataformas globais com Next.js e TypeScript. Antes, como Engenheiro de Software, ajudei a construir uma suíte de gestão com 30+ microsserviços em arquitetura distribuída, modernizei projetos legados, padronizei práticas de desenvolvimento e mantive documentação de APIs e interfaces. Stack: React, TypeScript, Next.js, Vite, GraphQL, Jest, Storybook, Docker e Podman.",
       },
       {
         label: "ConectaDoc",
-        body: "Antes disso, trabalhei na ConectaDoc como principal desenvolvedor web de uma plataforma de saúde usada por clientes no Brasil e em outros países. Desenvolvi e mantive funcionalidades web e mobile com React, React Native, TypeScript e JavaScript, integrando aplicações frontend com serviços backend e fluxos de negócio. A função também envolvia debugging, refatoração, decisões técnicas, comunicação com stakeholders e tradução de requisitos de produto em soluções técnicas práticas.",
+        body: "Na ConectaDoc, liderei o desenvolvimento técnico de uma aplicação de saúde usada por clientes internacionais, entregando melhorias que elevaram a experiência do usuário. Participei de decisões técnicas e de design de sistema, fortaleci segurança e integridade de dados com boas práticas e conformidade, e atuei com React, React Native, TypeScript, JavaScript e Jest.",
       },
       {
-        label: "Kenzie Academy Brazil",
-        body: "Na Kenzie Academy Brazil, atuei como Peer Coach, mentoreando alunos de desenvolvimento full-stack em JavaScript, React, Node.js e práticas de engenharia de software. Revisei projetos, ajudei desenvolvedores a depurar problemas técnicos e dei feedback sobre lógica, legibilidade, manutenibilidade e qualidade de código. Essa experiência fortaleceu minha capacidade de comunicar conceitos técnicos, revisar código e apoiar o desenvolvimento de outros engenheiros.",
-      },
-      {
-        label: "Liore",
-        body: "Também construí do zero um sistema interno de gestão médica para a Liore com Next.js, TypeScript, Node.js e MongoDB. Desenvolvi módulos de pacientes, agenda médica, consultas, pagamentos e fluxos administrativos; componentes reutilizáveis; validação de formulários; integração com APIs; regras de negócio de disponibilidade; e decisões de arquitetura nas camadas frontend e backend, com interface responsiva para profissionais de saúde e administração.",
+        label: "Kenzie Academy Brasil",
+        body: "Como Peer Coach na Kenzie Academy Brasil, ofereci mentoria técnica e suporte a resolução de problemas para outros desenvolvedores, elevando resultados de aprendizado. Avaliei e revisei tarefas em JavaScript, TypeScript, HTML, CSS e React, e acompanhei o progresso dos alunos ao longo do programa.",
       },
     ],
     closing:
-      "Ao longo dessas experiências, desenvolvi uma base sólida em arquitetura frontend, desenvolvimento baseado em componentes, integração com APIs, testes, performance, discussões de system design e ownership ponta a ponta de features. Sou mais efetivo em papéis onde posso combinar desenvolvimento frontend hands-on com decisões técnicas, colaboração e responsabilidade por entregar experiências de produto escaláveis e sustentáveis.",
+      "Atualmente busco oportunidades como Engenheiro de Software Sênior para aplicar expertise em tecnologias web modernas e arquitetura de sistemas na construção de produtos de impacto.",
   },
   contact: {
     title: "Contato",
     intro:
-      "Estou disponível para oportunidades remotas, projetos e conversas sobre desenvolvimento de produtos digitais.",
+      "Busco oportunidades como Engenheiro de Software Sênior: papéis remotos, produtos e conversas sobre sistemas digitais que escalam.",
     email: "E-mail",
     linkedin: "LinkedIn",
     whatsapp: "WhatsApp",

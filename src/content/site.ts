@@ -183,11 +183,31 @@ export const experience: Experience[] = [
       en: "Jan 2025 · Present",
     },
     summary: {
-      pt: "Desenvolvimento de produtos digitais para clientes, cobrindo arquitetura, frontend, backend e entrega ponta a ponta com React, Next.js, TypeScript e Node.js.",
-      en: "Building digital products for clients end to end, covering architecture, frontend, backend, and delivery with React, Next.js, TypeScript, and Node.js.",
+      pt: "Arquitetura e entrega de produtos digitais ponta a ponta: frontend, backend, integrações e infraestrutura. Inclui plataforma de gestão clínica e site imobiliário com React, Next.js, TypeScript, Node.js, MongoDB e Vercel.",
+      en: "Architected and delivered digital products end to end: frontend, backend, integrations, and infrastructure. Includes a clinic management platform and a real estate website with React, Next.js, TypeScript, Node.js, MongoDB, and Vercel.",
     },
     current: true,
     projectIds: ["liore-management-platform", "kyle-co-real-estate"],
+  },
+  {
+    id: "abercrombie-fitch-senior",
+    company: {
+      pt: "Abercrombie & Fitch",
+      en: "Abercrombie & Fitch",
+    },
+    role: {
+      pt: "Engenheiro de Software Sênior",
+      en: "Senior Software Engineer",
+    },
+    period: {
+      pt: "Mar 2025 · Fev 2026",
+      en: "Mar 2025 · Feb 2026",
+    },
+    summary: {
+      pt: "Co-projeto e desenvolvimento de plataforma de orquestração de micro-frontends para e-commerce de larga escala. Contribuição para 30% de melhoria de performance em plataformas globais com Next.js e TypeScript, alinhando decisões de arquitetura e developer experience.",
+      en: "Co-designed and developed a micro-frontend orchestration platform for large-scale e-commerce. Contributed to a 30% performance improvement across global platforms with Next.js and TypeScript, aligning architecture decisions and developer experience.",
+    },
+    projectIds: ["abercrombie-ecommerce"],
   },
   {
     id: "abercrombie-fitch",
@@ -200,13 +220,14 @@ export const experience: Experience[] = [
       en: "Software Engineer",
     },
     period: {
-      pt: "Nov 2022 · Fev 2026",
-      en: "Nov 2022 · Feb 2026",
+      pt: "Nov 2022 · Mar 2025",
+      en: "Nov 2022 · Mar 2025",
     },
     summary: {
-      pt: "Atuação em sistemas corporativos internos e plataformas de e-commerce usando React, TypeScript, Node.js e GraphQL. Trabalhei com sistemas distribuídos, integração de APIs, testes, documentação e desenvolvimento de funcionalidades desde a análise até a entrega.",
-      en: "Worked on enterprise internal systems and e-commerce platforms using React, TypeScript, Node.js, and GraphQL. Contributed to distributed systems, API integrations, testing, documentation, and feature development from requirements analysis through delivery.",
+      pt: "Desenvolvimento de suíte de gestão com 30+ microsserviços em arquitetura distribuída. Modernização de projetos, padronização de práticas, documentação de APIs e UIs, e ownership de features com React, TypeScript, Vite, GraphQL e Jest.",
+      en: "Built a management software suite with 30+ microservices in a distributed architecture. Modernized projects, standardized practices, documented APIs and UIs, and owned features with React, TypeScript, Vite, GraphQL, and Jest.",
     },
+    projectIds: ["enterprise-management-systems"],
   },
   {
     id: "conectadoc",
@@ -223,9 +244,10 @@ export const experience: Experience[] = [
       en: "May 2022 · Nov 2022",
     },
     summary: {
-      pt: "Atuei como principal desenvolvedor web de uma plataforma de saúde utilizada por clientes no Brasil e no exterior. Desenvolvi funcionalidades com React, React Native e TypeScript, integrei APIs e participei de decisões técnicas e de produto.",
-      en: "Worked as the main web developer for a healthcare platform used by clients in Brazil and abroad. Built features with React, React Native, and TypeScript, integrated APIs, and contributed to technical and product decisions.",
+      pt: "Desenvolvimento técnico de aplicação de saúde para clientes internacionais, com melhorias de UX, decisões de arquitetura e reforço de segurança e conformidade. Stack: React, React Native, TypeScript, JavaScript e Jest.",
+      en: "Led technical development of a healthcare application for international clients, shipping UX improvements, contributing to architecture decisions, and strengthening security and compliance. Stack: React, React Native, TypeScript, JavaScript, and Jest.",
     },
+    projectIds: ["healthcare-saas-platform"],
   },
   {
     id: "kenzie-academy",
@@ -242,8 +264,8 @@ export const experience: Experience[] = [
       en: "Mar 2021 · May 2022",
     },
     summary: {
-      pt: "Liderei mentorias técnicas para estudantes de desenvolvimento full stack em JavaScript, React e Node.js. Realizei revisões de código, apoiei a resolução de problemas e ajudei desenvolvedores a melhorar lógica, qualidade de código e boas práticas.",
-      en: "Provided technical mentorship to full-stack development students working with JavaScript, React, and Node.js. Reviewed projects, supported debugging, and helped developers improve their problem-solving, code quality, and engineering practices.",
+      pt: "Mentoria técnica e suporte a resolução de problemas para desenvolvedores em formação. Avaliação e revisão de tarefas em JavaScript, TypeScript, HTML, CSS e React, com acompanhamento do progresso dos alunos.",
+      en: "Provided technical mentorship and debugging support to developing engineers. Evaluated and reviewed tasks in JavaScript, TypeScript, HTML, CSS, and React, while monitoring student progress.",
     },
   },
 ];
@@ -257,8 +279,8 @@ export const projects: Project[] = [
       en: "Clinic Management Platform",
     },
     description: {
-      pt: "Sistema interno de gestão médica construído do zero, com agenda, pacientes, pagamentos e fluxos administrativos em uma arquitetura full-stack moderna.",
-      en: "Internal medical management system built from scratch, with scheduling, patients, payments, and admin workflows on a modern full-stack architecture.",
+      pt: "Plataforma completa de gestão clínica construída do zero: agenda, prontuários, nutrição, financeiro e fluxos por papel, com arquitetura full-stack em Next.js, TypeScript e Node.js.",
+      en: "Complete clinic management platform built from scratch: scheduling, clinical records, nutrition, finance, and role-based workflows, with full-stack architecture in Next.js, TypeScript, and Node.js.",
     },
     client: {
       pt: "Liore",
@@ -350,12 +372,12 @@ export const projects: Project[] = [
     caseStudy: {
       overview: [
         {
-          pt: "Construí do zero um sistema interno de gestão para a plataforma médica da Liore, com Next.js, TypeScript e Node.js, estabelecendo uma arquitetura full-stack moderna.",
-          en: "Built an internal management system for Liore's medical platform from scratch using Next.js, TypeScript, and Node.js, establishing a modern full-stack architecture.",
+          pt: "Arquitetura e entrega de um produto digital completo para a Liore, da concepção ao deploy, cobrindo frontend, backend, integrações e infraestrutura.",
+          en: "Architected and delivered a complete digital product for Liore, from conception to deployment, covering frontend, backend, integrations, and infrastructure.",
         },
         {
-          pt: "Como único desenvolvedor, tomei as decisões de arquitetura: modelagem com MongoDB, design de APIs em Node.js e implementação do frontend em Next.js e TypeScript, com foco em escalabilidade e manutenção.",
-          en: "As the sole developer, I owned architecture decisions: data modeling with MongoDB, API design with Node.js, and frontend implementation with Next.js and TypeScript, with a focus on scalability and maintainability.",
+          pt: "Como único desenvolvedor, implementei a plataforma de gestão clínica com Next.js, TypeScript, Node.js e MongoDB, com foco em escalabilidade e manutenção.",
+          en: "As the sole developer, I built the clinic management platform with Next.js, TypeScript, Node.js, and MongoDB, focused on scalability and maintainability.",
         },
       ],
       role: {
@@ -364,8 +386,8 @@ export const projects: Project[] = [
       },
       highlights: [
         {
-          pt: "Módulos completos de gestão de pacientes, agenda médica, criação de consultas, acompanhamento de pagamentos e fluxos administrativos.",
-          en: "Comprehensive modules for patient management, doctor scheduling, appointment creation, payment tracking, and administrative workflows.",
+          pt: "Módulos de agenda, prontuários clínicos, acompanhamento nutricional, financeiro e fluxos com controle de papéis.",
+          en: "Modules for scheduling, clinical records, nutrition tracking, finance, and role-based workflows.",
         },
         {
           pt: "Componentes frontend reutilizáveis e fluxos de aplicação estruturados para manter o sistema escalável e sustentável.",
@@ -476,16 +498,16 @@ export const projects: Project[] = [
       en: "E-commerce Platform",
     },
     description: {
-      pt: "Desenvolvimento e manutenção da plataforma de e-commerce da Abercrombie & Fitch com React, TypeScript e GraphQL.",
-      en: "Development and maintenance of Abercrombie & Fitch's e-commerce platform with React, TypeScript, and GraphQL.",
+      pt: "Orquestração de micro-frontends e evolução da plataforma de e-commerce global, com foco em performance e integração de múltiplas aplicações frontend.",
+      en: "Micro-frontend orchestration and evolution of the global e-commerce platform, focused on performance and seamless integration of multiple frontend applications.",
     },
     client: {
       pt: "Abercrombie & Fitch",
       en: "Abercrombie & Fitch",
     },
     startDate: {
-      pt: "Nov 2022",
-      en: "Nov 2022",
+      pt: "Mar 2025",
+      en: "Mar 2025",
     },
     endDate: {
       pt: "Fev 2026",
@@ -498,48 +520,48 @@ export const projects: Project[] = [
       "React",
       "Next.js",
       "TypeScript",
-      "GraphQL",
-      "Node.js",
+      "Micro-frontends",
       "Jest",
+      "Docker",
       "E-commerce",
     ],
     caseStudy: {
       overview: [
         {
-          pt: "Participei do desenvolvimento e manutenção da plataforma de e-commerce da Abercrombie & Fitch, em um ambiente de produto de larga escala e equipes distribuídas.",
-          en: "I contributed to the development and maintenance of Abercrombie & Fitch's e-commerce platform in a large-scale product environment with distributed teams.",
+          pt: "Co-projetei e desenvolvi a plataforma de orquestração de micro-frontends do e-commerce da Abercrombie & Fitch, permitindo integração fluida de múltiplas aplicações frontend.",
+          en: "Co-designed and developed the micro-frontend orchestration platform for Abercrombie & Fitch e-commerce, enabling seamless integration of multiple frontend applications.",
         },
         {
-          pt: "O trabalho cobriu novas funcionalidades, correções, melhorias de interface e integração contínua com APIs GraphQL ao longo do ciclo de entrega.",
-          en: "The work covered new features, fixes, UI improvements, and ongoing GraphQL API integration throughout the delivery lifecycle.",
+          pt: "O trabalho contribuiu para cerca de 30% de melhoria de performance nas plataformas globais, com Next.js, TypeScript e colaboração cross-funcional em decisões de arquitetura e developer experience.",
+          en: "The work contributed to roughly a 30% performance improvement across global platforms, using Next.js and TypeScript while collaborating cross-functionally on architecture decisions and developer experience.",
         },
       ],
       role: {
-        pt: "Engenheiro de Software em time de produto e-commerce.",
-        en: "Software Engineer on the e-commerce product team.",
+        pt: "Engenheiro de Software Sênior em plataforma e-commerce e micro-frontends.",
+        en: "Senior Software Engineer on e-commerce platform and micro-frontends.",
       },
       highlights: [
         {
-          pt: "Implementação e evolução de fluxos de interface com React e TypeScript.",
-          en: "Building and evolving UI flows with React and TypeScript.",
+          pt: "Orquestração de micro-frontends para integrar múltiplas aplicações no site de e-commerce.",
+          en: "Micro-frontend orchestration to integrate multiple applications into the e-commerce site.",
         },
         {
-          pt: "Integração com APIs GraphQL e colaboração em mudanças de contrato e consumo de dados.",
-          en: "GraphQL API integration and collaboration on data contracts and client consumption.",
+          pt: "Melhoria de performance em plataformas globais via arquitetura e manutenção de micro-frontends.",
+          en: "Global platform performance gains through micro-frontend architecture development and maintenance.",
         },
         {
-          pt: "Testes automatizados, revisão de código e entrega contínua com times distribuídos.",
-          en: "Automated testing, code reviews, and continuous delivery with distributed teams.",
+          pt: "Alinhamento de decisões de arquitetura e melhoria da experiência de desenvolvimento para entrega contínua.",
+          en: "Architecture alignment and developer experience improvements supporting continuous feature delivery.",
         },
       ],
       notes: [
         {
-          pt: "Stack principal: React, Next.js, TypeScript, GraphQL, Node.js e Jest.",
-          en: "Core stack: React, Next.js, TypeScript, GraphQL, Node.js, and Jest.",
+          pt: "Stack: React, TypeScript, Next.js, JavaScript, Jest, Docker e Podman.",
+          en: "Stack: React, TypeScript, Next.js, JavaScript, Jest, Docker, and Podman.",
         },
         {
-          pt: "Foco em qualidade de entrega, comunicação assíncrona e alinhamento com requisitos de produto.",
-          en: "Focus on delivery quality, async collaboration, and alignment with product requirements.",
+          pt: "Ambiente remoto com times cross-funcionais em escala Fortune 500.",
+          en: "Remote environment with cross-functional teams at Fortune 500 scale.",
         },
       ],
     },
@@ -552,35 +574,35 @@ export const projects: Project[] = [
       en: "Distributed Enterprise Systems",
     },
     description: {
-      pt: "Aplicações internas para operações corporativas, com arquitetura frontend e padronização entre microsserviços.",
-      en: "Internal applications for enterprise operations, with frontend architecture and cross-microservice standardization.",
+      pt: "Suíte de gestão com 30+ microsserviços em arquitetura distribuída, modernização de projetos e padronização de desenvolvimento.",
+      en: "Management software suite with 30+ microservices in a distributed architecture, project modernization, and development standardization.",
     },
     client: {
       pt: "Abercrombie & Fitch",
       en: "Abercrombie & Fitch",
     },
     startDate: { pt: "Nov 2022", en: "Nov 2022" },
-    endDate: { pt: "Fev 2026", en: "Feb 2026" },
+    endDate: { pt: "Mar 2025", en: "Mar 2025" },
     logo: "/photos/abercrombie-fitch-emblem.avif",
     logoOnWhite: true,
     tags: [
       "React",
       "Vite",
       "TypeScript",
-      "Node.js",
       "GraphQL",
       "Microservices",
       "Jest",
+      "Storybook",
     ],
     caseStudy: {
       overview: [
         {
-          pt: "Além do e-commerce, atuei em um conjunto de aplicações internas que sustentam operações corporativas da Abercrombie & Fitch.",
-          en: "Beyond e-commerce, I worked on a group of internal applications that support Abercrombie & Fitch corporate operations.",
+          pt: "Colaborei com times cross-funcionais no desenvolvimento de uma suíte de gestão, contribuindo para a criação de 30+ microsserviços em arquitetura distribuída.",
+          en: "Collaborated with cross-functional teams to develop a management software suite, contributing to the creation of 30+ microservices within a distributed system architecture.",
         },
         {
-          pt: "O foco foi arquitetura frontend, componentes reutilizáveis, integração com APIs e colaboração na padronização de uma malha com mais de 30 microsserviços.",
-          en: "The focus was frontend architecture, reusable components, API integration, and collaboration on standardizing a mesh of more than 30 microservices.",
+          pt: "Modernizei projetos existentes, padronizei práticas de desenvolvimento e mantive documentação de APIs e interfaces para conformidade e transferência de conhecimento.",
+          en: "Modernized existing projects, standardized development practices, and maintained API and UI documentation for compliance and knowledge transfer.",
         },
       ],
       role: {
@@ -589,22 +611,22 @@ export const projects: Project[] = [
       },
       highlights: [
         {
-          pt: "Arquitetura frontend e componentes compartilhados para acelerar entrega entre aplicações.",
-          en: "Frontend architecture and shared components to speed delivery across applications.",
+          pt: "Contribuição para 30+ microsserviços em uma malha distribuída de larga escala.",
+          en: "Contribution to 30+ microservices in a large-scale distributed mesh.",
         },
         {
-          pt: "Integração com APIs e alinhamento de padrões entre times e serviços.",
-          en: "API integration and pattern alignment across teams and services.",
+          pt: "Modernização tecnológica e padronização de desenvolvimento no novo grupo de software.",
+          en: "Technology modernization and development standardization across the new software group.",
         },
         {
-          pt: "Colaboração na padronização de mais de 30 microsserviços em um ambiente distribuído.",
-          en: "Collaboration on standardizing more than 30 microservices in a distributed environment.",
+          pt: "Ownership de múltiplos projetos: novas features, resolução de problemas e documentação técnica.",
+          en: "Ownership of multiple projects: new features, issue resolution, and technical documentation.",
         },
       ],
       notes: [
         {
-          pt: "Stack: React, Vite, TypeScript, Node.js, GraphQL e Jest.",
-          en: "Stack: React, Vite, TypeScript, Node.js, GraphQL, and Jest.",
+          pt: "Stack: React, TypeScript, Vite, GraphQL, JavaScript, Jest, Storybook e Apollo Server.",
+          en: "Stack: React, TypeScript, Vite, GraphQL, JavaScript, Jest, Storybook, and Apollo Server.",
         },
         {
           pt: "Ênfase em consistência técnica, reuso e manutenibilidade em escala corporativa.",
@@ -621,8 +643,8 @@ export const projects: Project[] = [
       en: "Healthcare SaaS Platform",
     },
     description: {
-      pt: "Plataforma médica web e mobile para clientes no Brasil e no exterior, com foco em produto e integração de APIs.",
-      en: "Web and mobile healthcare platform for clients in Brazil and abroad, focused on product and API integration.",
+      pt: "Aplicação de saúde web e mobile para clientes internacionais, com foco em UX, decisões técnicas e segurança de dados.",
+      en: "Web and mobile healthcare application for international clients, focused on UX, technical decisions, and data security.",
     },
     client: {
       pt: "ConectaDoc",
@@ -633,43 +655,43 @@ export const projects: Project[] = [
     logo: "/photos/conectadoc-emblem.avif",
     logoOnWhite: true,
     url: "https://conectadoc.com.br/",
-    tags: ["React", "React Native", "TypeScript", "JavaScript", "REST APIs"],
+    tags: ["React", "React Native", "TypeScript", "JavaScript", "Jest"],
     caseStudy: {
       overview: [
         {
-          pt: "Na ConectaDoc, atuei como principal desenvolvedor web de uma plataforma de saúde usada por clientes no Brasil e no exterior.",
-          en: "At ConectaDoc, I worked as the main web developer on a healthcare platform used by clients in Brazil and abroad.",
+          pt: "Gerenciei o desenvolvimento técnico de uma aplicação de saúde usada por clientes internacionais, entregando melhorias que elevaram a experiência do usuário.",
+          en: "Managed technical development of a healthcare application used by an international client base, shipping feature enhancements that improved user experience.",
         },
         {
-          pt: "O trabalho misturou entrega de features, manutenção, integração com APIs e participação em decisões técnicas e de produto.",
-          en: "The work mixed feature delivery, maintenance, API integration, and participation in technical and product decisions.",
+          pt: "Participei de decisões técnicas e de design de sistema, reforçando segurança e integridade de dados com boas práticas e conformidade.",
+          en: "Contributed to technical decision-making and system design, strengthening data security and integrity with solid engineering practices and compliance standards.",
         },
       ],
       role: {
-        pt: "Engenheiro de Software Júnior, principal desenvolvedor web.",
-        en: "Junior Software Engineer and main web developer.",
+        pt: "Engenheiro de Software Júnior, responsável técnico da aplicação.",
+        en: "Junior Software Engineer owning technical aspects of the application.",
       },
       highlights: [
         {
-          pt: "Desenvolvimento e manutenção de funcionalidades web com React e TypeScript.",
-          en: "Development and maintenance of web features with React and TypeScript.",
+          pt: "Melhorias de features e UX para base internacional de clientes.",
+          en: "Feature and UX enhancements for an international client base.",
         },
         {
-          pt: "Contribuição em fluxos mobile com React Native.",
-          en: "Contribution to mobile flows with React Native.",
+          pt: "Participação em decisões de tecnologia e design de sistema.",
+          en: "Contribution to technology decisions and system design approaches.",
         },
         {
-          pt: "Integração de interfaces com APIs REST e apoio a prioridades de produto.",
-          en: "REST API interface integration and support for product priorities.",
+          pt: "Práticas de segurança e conformidade em sistemas de saúde.",
+          en: "Security and compliance practices in healthcare systems.",
         },
       ],
       notes: [
         {
-          pt: "Stack: React, React Native, TypeScript, JavaScript e REST APIs.",
-          en: "Stack: React, React Native, TypeScript, JavaScript, and REST APIs.",
+          pt: "Stack: React, React Native, TypeScript, JavaScript e Jest.",
+          en: "Stack: React, React Native, TypeScript, JavaScript, and Jest.",
         },
         {
-          pt: "Experiência próxima do cliente e do produto em um SaaS de saúde em operação.",
+          pt: "Experiência próxima do produto em um SaaS de saúde em operação.",
           en: "Close-to-product experience in a live healthcare SaaS environment.",
         },
       ],
